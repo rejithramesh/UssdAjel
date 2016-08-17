@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="ear" build-on-make="true" name="UssdAjelBundleEAR">
+    <output-path>$PROJECT_DIR$/out/artifacts/UssdAjelBundleEAR</output-path>
+    <root id="archive" name="UssdAjelBundleEAR.ear">
+      <element id="artifact" artifact-name="UssdAjelBundle" />
+      <element id="javaee-facet-resources" facet="UssdAjelBundle/javaeeApplication/javaEEApplication" />
+      <element id="directory" name="lib">
+        <element id="file-copy" path="$USER_HOME$/Desktop/UssdAjel_latest_changes/OLD/lib/commons-logging-1.1.1.jar" />
+        <element id="file-copy" path="$USER_HOME$/Desktop/UssdAjel_latest_changes/OLD/lib/log4j-1.2.16.jar" />
+        <element id="file-copy" path="$USER_HOME$/Desktop/UssdAjel_latest_changes/OLD/lib/UssdLib.jar" />
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$USER_HOME$/Desktop/UssdAjel_latest_changes/OLD/META-INF/application.xml" />
+        <element id="file-copy" path="$USER_HOME$/Desktop/UssdAjel_latest_changes/OLD/META-INF/jboss-app.xml" />
+      </element>
+      <element id="file-copy" path="$USER_HOME$/Desktop/UssdAjel_latest_changes/OLD/log4j.dev.properties" />
+      <element id="file-copy" path="$USER_HOME$/Desktop/UssdAjel_latest_changes/OLD/log4j.prod.properties" />
+    </root>
+  </artifact>
+</component>

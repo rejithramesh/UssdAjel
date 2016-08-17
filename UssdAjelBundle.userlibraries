@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2">
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/ha-api.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/FastInoset.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/javax.annotation.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/jaxb-impl.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/jaxb-api.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/jaxb-xjc.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/gmbal-api-only.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/jaxws-api.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/jaxws-rt.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/jaxws-tools.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/jsr181-api.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/mail.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/management-api.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/mimepull.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/policy.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/saaj-api.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/saaj-impl.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/stax2-api.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/stax-ex.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/streambuffer.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/woodstox-core-asl.jar" />
+  </library>
+  <library name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2 (2)">
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/javax.annotation.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/gmbal-api-only.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/ha-api.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/jaxws-api.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/jaxb-api.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/jsr181-api.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/management-api.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/FastInoset.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/mimepull.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/saaj-api.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/policy.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/jaxb-impl.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/stax2-api.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/mail.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/stax-ex.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/jaxws-tools.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/streambuffer.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/saaj-impl.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/woodstox-core-asl.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/jaxb-xjc.jar" />
+    <archive path="C:/Users/ADMIN/Documents/UssdAjelBundle/lib/jaxws-rt.jar" />
+  </library>
+  <library name="UssdLib">
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/UssdLib.jar" />
+  </library>
+  <library name="apache-commons-lang">
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/apache-commons-lang.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/commons-logging-1.1.1.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/cxf-api.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/cxf-bundle-jaxrs-2.3.9.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-2.2.8.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-2.4.1.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-2.5.3.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-2.5.4.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-2.7.0.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-jetty.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-osgi-2.3.6.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/hibernate3.5.4.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/javax.persistence-2.0.3.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/log4j-1.2.17.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/scala-compiler.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/scalap.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/scalatest-1.2.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/UssdDatabase.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/UssdLib.jar" />
+    <archive path="C:/Users/ADMIN/Desktop/System_Setup/System_setup/Jars/UssdUtils.jar" />
+  </library>
+  <library name="commons-logging-1.1.1">
+    <archive path="C:/Users/ADMIN/Desktop/UssdAjel_latest_changes/OLD/lib/commons-logging-1.1.1.jar" />
+  </library>
+  <library name="log4j-1.2.16">
+    <archive path="C:/Users/ADMIN/Desktop/UssdAjel_latest_changes/OLD/lib/log4j-1.2.16.jar" />
+  </library>
+  <library name="scala-sdk-2.9.3 (3)">
+    <archive path="C:/Users/ADMIN/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.9.3.jar" />
+  </library>
+</eclipse-userlibraries>
+

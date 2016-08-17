@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/out/test/UssdAjelBundle"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="JBoss 7.0.1.Final" scope="PROVIDED"/>
+	<lib name="scala-sdk-2.9.3 (3)" scope="PROVIDED"/>
+	<lib name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2" scope="PROVIDED"/>
+	<lib name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2 (2)" scope="PROVIDED"/>
+	<lib name="UssdLib" scope="PROVIDED"/>
+	<lib name="apache-commons-lang" scope="PROVIDED"/>
+	<lib name="commons-logging-1.1.1" scope="PROVIDED"/>
+	<lib name="log4j-1.2.16" scope="PROVIDED"/>
+	<levels>
+		<level name="JBoss 7.0.1.Final" value="application_server_libraries"/>
+		<level name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2" value="project"/>
+		<level name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2 (2)" value="project"/>
+		<level name="UssdLib" value="project"/>
+		<level name="apache-commons-lang" value="project"/>
+		<level name="commons-logging-1.1.1" value="project"/>
+		<level name="log4j-1.2.16" value="project"/>
+	</levels>
+</component>

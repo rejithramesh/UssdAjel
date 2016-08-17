@@ -1,0 +1,3242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://nawras.om/2011/2" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://nawras.om/2011/2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://nawras.om/2011/2">
+      <s:element name="AddDataProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDataProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDataBalanceSelfCare">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDataBalanceSelfCareResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDataBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDataBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableDataProducts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableDataProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableDataProductsResult" type="tns:ArrayOfUSSDProduct" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUSSDProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="USSDProduct" nillable="true" type="tns:USSDProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="USSDProduct">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Product_Identifier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Product_Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MRC" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAvailableBlackBerryProducts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableBlackBerryProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableBlackBerryProductsResult" type="tns:ArrayOfUSSDProduct" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableDataTopUps">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableDataTopUpsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableDataTopUpsResult" type="tns:ArrayOfDataTopUpProduct" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDataTopUpProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DataTopUpProduct" nillable="true" type="tns:DataTopUpProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DataTopUpProduct">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TopUpProductID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TopUpTariffID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TopUpName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OTCCharge" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataProductID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataTariffID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFamilyCUGMembers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFamilyCUGMembersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFamilyCUGMembersResult" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InviteToFamilyCUG">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sendToEventSource" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InviteToFamilyCUGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RevokeFamilyCUGInvitation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="invitationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RevokeFamilyCUGInvitationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RevokeAllFamilyCUGInvitations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RevokeAllFamilyCUGInvitationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveMemberFromFamilyCUG">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberEventSource" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveMemberFromFamilyCUGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingFamilyCUGInvitationsReceived">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingFamilyCUGInvitationsReceivedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingFamilyCUGInvitationsReceivedResult" type="tns:ArrayOfFamilyCUGInvitation" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFamilyCUGInvitation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FamilyCUGInvitation" nillable="true" type="tns:FamilyCUGInvitation" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FamilyCUGInvitation">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BusinessBaseOfFamilyCUGInvitation">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="SentBySubscriptionID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="SentByMSISDN" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SentToSubscriptionID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="SentToMSISDN" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SentOn" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="StatusUpdatedOn" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="SysRevokeReasonID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="SysRevokedDueTo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BusinessBaseOfFamilyCUGInvitation" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BusinessBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BusinessBase" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UndoableBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BrokenRulesCollection" type="tns:ArrayOfBrokenRule" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="UndoableBase" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BindableBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BindableBase" abstract="true" />
+      <s:complexType name="ArrayOfBrokenRule">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BrokenRule" nillable="true" type="tns:BrokenRule" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BrokenRule" />
+      <s:element name="GetPendingFamilyCUGInvitationsSent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingFamilyCUGInvitationsSentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingFamilyCUGInvitationsSentResult" type="tns:ArrayOfFamilyCUGInvitation" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptFamilyCUGInvitation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="invitationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptFamilyCUGInvitationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RejectFamilyCUGInvitation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="invitationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RejectFamilyCUGInvitationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RejectAllFamilyCUGInvitations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RejectAllFamilyCUGInvitationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFamilyCUG">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFamilyCUGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateAddDataTopUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataTopUpProductID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataTopUpTariffID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateAddDataTopUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDataTopUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataTopUpProductID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataTopUpTariffID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDataTopUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TerminatePrepaidLine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="civilId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminatedNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TerminatePrepaidLineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOffPeakProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOffPeakProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TerminateOffPeakProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TerminateOffPeakProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOffPeakProductStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOffPeakProductStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetOffPeakProductStatusResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReserveVoucher">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sourceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="voucherCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReserveVoucherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactionId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndReserve">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="transactionId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="action" type="tns:VoucherTransactionAction" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="VoucherTransactionAction">
+        <s:restriction base="s:string">
+          <s:enumeration value="Commit" />
+          <s:enumeration value="RollBack" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="EndReserveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMGMLoyaltyPoints">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMGMLoyaltyPointsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currentMonthPoints" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nextMonthPoints" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HasTrialProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HasTrialProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HasTrialProductResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="trailProductName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="trailStartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="trailEndDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuyTrialProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuyTrialProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePrepaidPreferredLanguage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ussdlanguage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="notificationlanguage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePrepaidPreferredLanguageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableBasePlans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableBasePlansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableBasePlansResult" type="tns:ArrayOfUSSDProduct" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateSubscriptionBasePlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="baseProductIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateSubscriptionBasePlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isDataBundled" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="noChangeOptionText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateSubscriptionDataProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateSubscriptionDataProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableDataPlans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="baseProductIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableDataPlansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableDataPlansResult" type="tns:ArrayOfUSSDProduct" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableBlackberryPlans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="baseProductIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableBlackberryPlansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableBlackberryPlansResult" type="tns:ArrayOfUSSDProduct" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeSubscriptionBundlePlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="baseProductIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataProductIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeSubscriptionBundlePlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateApplicableTasks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tasks" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateApplicableTasksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateApplicableTasksResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableSmartRoamerBundles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableSmartRoamerBundlesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableSmartRoamerBundlesResult" type="tns:ArrayOfUSSDProduct" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSmartRoamerBundle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MSISDN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="applicationName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSmartRoamerBundleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BarData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ussdlanguage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BarDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnBarData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ussdlanguage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnBarDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsBarred">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ussdlanguage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsBarredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsBarredResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateSubscribeTo4GAddOn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msisdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateSubscribeTo4GAddOnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isSubscribed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscribeIn4GAddOn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msisdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscribeIn4GAddOnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnubscribeIn4GAddOn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msisdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnubscribeIn4GAddOnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckRedRocketBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckRedRocketBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckFixedUSSDContactNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contactNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckFixedUSSDContactNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isPostpaid" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="isLTE" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeUSSDContactNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newContactNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeUSSDContactNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPostpaidBillInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPostpaidBillInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InquirePukCodeFixedLTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InquirePukCodeFixedLTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddVoiceServiceFixedLTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddVoiceServiceFixedLTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveVoiceServiceFixedLTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveVoiceServiceFixedLTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFixedLTEDataBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFixedLTEDataBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFixedLTEAvailableBasePlans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFixedLTEAvailableBasePlansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFixedLTEAvailableBasePlansResult" type="tns:ArrayOfUSSDProduct" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeFixedLTEBasePricePlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="baseProductIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataProductIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeFixedLTEBasePricePlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckShahryOfferPoints">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MSISDN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckShahryOfferPointsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ResponseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableProducts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msisdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableProductsResult" type="tns:ArrayOfUSSDProduct" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msisdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="operation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msisdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TerminateProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msisdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TerminateProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentActiveProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MSISDN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentActiveProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productIdentifier" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEEGlobalProdCharge">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msisdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topupboo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEEGlobalProdChargeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetEEGlobalProdChargeResult" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPUKDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MSISDN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPUKDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPostpaidOffers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPostpaidOffersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPostpaidOffersResult" type="tns:ArrayOfUSSDOffer" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUSSDOffer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="USSDOffer" nillable="true" type="tns:USSDOffer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="USSDOffer">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OfferID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OfferCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OfferDisplayName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddMobileOffer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MSISDN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="offerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMobileOfferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateAddDataProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msisdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateAddDataProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckAddOnBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sendSMS" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckAddOnBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAddOnBalanceResult" type="tns:ArrayOfAddOnBalanceDetails" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAddOnBalanceDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AddOnBalanceDetails" nillable="true" type="tns:AddOnBalanceDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AddOnBalanceDetails">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BusinessBaseOfAddOnBalanceDetails">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Msisdn" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="TariffId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProductSequence" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="RemainingVolume" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="TotalVolume" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="ConsumedVolume" type="s:decimal" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BusinessBaseOfAddOnBalanceDetails" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BusinessBase" />
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddDataProductSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDataProduct" />
+  </wsdl:message>
+  <wsdl:message name="AddDataProductSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDataProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckDataBalanceSelfCareSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckDataBalanceSelfCare" />
+  </wsdl:message>
+  <wsdl:message name="CheckDataBalanceSelfCareSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckDataBalanceSelfCareResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckDataBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckDataBalance" />
+  </wsdl:message>
+  <wsdl:message name="CheckDataBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckDataBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableDataProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableDataProducts" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableDataProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableDataProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableBlackBerryProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableBlackBerryProducts" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableBlackBerryProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableBlackBerryProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableDataTopUpsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableDataTopUps" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableDataTopUpsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableDataTopUpsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFamilyCUGMembersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFamilyCUGMembers" />
+  </wsdl:message>
+  <wsdl:message name="GetFamilyCUGMembersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFamilyCUGMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="InviteToFamilyCUGSoapIn">
+    <wsdl:part name="parameters" element="tns:InviteToFamilyCUG" />
+  </wsdl:message>
+  <wsdl:message name="InviteToFamilyCUGSoapOut">
+    <wsdl:part name="parameters" element="tns:InviteToFamilyCUGResponse" />
+  </wsdl:message>
+  <wsdl:message name="RevokeFamilyCUGInvitationSoapIn">
+    <wsdl:part name="parameters" element="tns:RevokeFamilyCUGInvitation" />
+  </wsdl:message>
+  <wsdl:message name="RevokeFamilyCUGInvitationSoapOut">
+    <wsdl:part name="parameters" element="tns:RevokeFamilyCUGInvitationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RevokeAllFamilyCUGInvitationsSoapIn">
+    <wsdl:part name="parameters" element="tns:RevokeAllFamilyCUGInvitations" />
+  </wsdl:message>
+  <wsdl:message name="RevokeAllFamilyCUGInvitationsSoapOut">
+    <wsdl:part name="parameters" element="tns:RevokeAllFamilyCUGInvitationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMemberFromFamilyCUGSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveMemberFromFamilyCUG" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMemberFromFamilyCUGSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveMemberFromFamilyCUGResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingFamilyCUGInvitationsReceivedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingFamilyCUGInvitationsReceived" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingFamilyCUGInvitationsReceivedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingFamilyCUGInvitationsReceivedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingFamilyCUGInvitationsSentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingFamilyCUGInvitationsSent" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingFamilyCUGInvitationsSentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingFamilyCUGInvitationsSentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AcceptFamilyCUGInvitationSoapIn">
+    <wsdl:part name="parameters" element="tns:AcceptFamilyCUGInvitation" />
+  </wsdl:message>
+  <wsdl:message name="AcceptFamilyCUGInvitationSoapOut">
+    <wsdl:part name="parameters" element="tns:AcceptFamilyCUGInvitationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RejectFamilyCUGInvitationSoapIn">
+    <wsdl:part name="parameters" element="tns:RejectFamilyCUGInvitation" />
+  </wsdl:message>
+  <wsdl:message name="RejectFamilyCUGInvitationSoapOut">
+    <wsdl:part name="parameters" element="tns:RejectFamilyCUGInvitationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RejectAllFamilyCUGInvitationsSoapIn">
+    <wsdl:part name="parameters" element="tns:RejectAllFamilyCUGInvitations" />
+  </wsdl:message>
+  <wsdl:message name="RejectAllFamilyCUGInvitationsSoapOut">
+    <wsdl:part name="parameters" element="tns:RejectAllFamilyCUGInvitationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFamilyCUGSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFamilyCUG" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFamilyCUGSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFamilyCUGResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAddDataTopUpSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateAddDataTopUp" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAddDataTopUpSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateAddDataTopUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDataTopUpSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDataTopUp" />
+  </wsdl:message>
+  <wsdl:message name="AddDataTopUpSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDataTopUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="TerminatePrepaidLineSoapIn">
+    <wsdl:part name="parameters" element="tns:TerminatePrepaidLine" />
+  </wsdl:message>
+  <wsdl:message name="TerminatePrepaidLineSoapOut">
+    <wsdl:part name="parameters" element="tns:TerminatePrepaidLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOffPeakProductSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOffPeakProduct" />
+  </wsdl:message>
+  <wsdl:message name="AddOffPeakProductSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOffPeakProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="TerminateOffPeakProductSoapIn">
+    <wsdl:part name="parameters" element="tns:TerminateOffPeakProduct" />
+  </wsdl:message>
+  <wsdl:message name="TerminateOffPeakProductSoapOut">
+    <wsdl:part name="parameters" element="tns:TerminateOffPeakProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOffPeakProductStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOffPeakProductStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetOffPeakProductStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOffPeakProductStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReserveVoucherSoapIn">
+    <wsdl:part name="parameters" element="tns:ReserveVoucher" />
+  </wsdl:message>
+  <wsdl:message name="ReserveVoucherSoapOut">
+    <wsdl:part name="parameters" element="tns:ReserveVoucherResponse" />
+  </wsdl:message>
+  <wsdl:message name="EndReserveSoapIn">
+    <wsdl:part name="parameters" element="tns:EndReserve" />
+  </wsdl:message>
+  <wsdl:message name="EndReserveSoapOut">
+    <wsdl:part name="parameters" element="tns:EndReserveResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMGMLoyaltyPointsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMGMLoyaltyPoints" />
+  </wsdl:message>
+  <wsdl:message name="GetMGMLoyaltyPointsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMGMLoyaltyPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="HasTrialProductSoapIn">
+    <wsdl:part name="parameters" element="tns:HasTrialProduct" />
+  </wsdl:message>
+  <wsdl:message name="HasTrialProductSoapOut">
+    <wsdl:part name="parameters" element="tns:HasTrialProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuyTrialProductSoapIn">
+    <wsdl:part name="parameters" element="tns:BuyTrialProduct" />
+  </wsdl:message>
+  <wsdl:message name="BuyTrialProductSoapOut">
+    <wsdl:part name="parameters" element="tns:BuyTrialProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePrepaidPreferredLanguageSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePrepaidPreferredLanguage" />
+  </wsdl:message>
+  <wsdl:message name="ChangePrepaidPreferredLanguageSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePrepaidPreferredLanguageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableBasePlansSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableBasePlans" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableBasePlansSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableBasePlansResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSubscriptionBasePlanSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateSubscriptionBasePlan" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSubscriptionBasePlanSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateSubscriptionBasePlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSubscriptionDataProductSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateSubscriptionDataProduct" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSubscriptionDataProductSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateSubscriptionDataProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableDataPlansSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableDataPlans" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableDataPlansSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableDataPlansResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableBlackberryPlansSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableBlackberryPlans" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableBlackberryPlansSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableBlackberryPlansResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeSubscriptionBundlePlanSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeSubscriptionBundlePlan" />
+  </wsdl:message>
+  <wsdl:message name="ChangeSubscriptionBundlePlanSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeSubscriptionBundlePlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateApplicableTasksSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateApplicableTasks" />
+  </wsdl:message>
+  <wsdl:message name="ValidateApplicableTasksSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateApplicableTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableSmartRoamerBundlesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableSmartRoamerBundles" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableSmartRoamerBundlesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableSmartRoamerBundlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSmartRoamerBundleSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSmartRoamerBundle" />
+  </wsdl:message>
+  <wsdl:message name="AddSmartRoamerBundleSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSmartRoamerBundleResponse" />
+  </wsdl:message>
+  <wsdl:message name="BarDataSoapIn">
+    <wsdl:part name="parameters" element="tns:BarData" />
+  </wsdl:message>
+  <wsdl:message name="BarDataSoapOut">
+    <wsdl:part name="parameters" element="tns:BarDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnBarDataSoapIn">
+    <wsdl:part name="parameters" element="tns:UnBarData" />
+  </wsdl:message>
+  <wsdl:message name="UnBarDataSoapOut">
+    <wsdl:part name="parameters" element="tns:UnBarDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsBarredSoapIn">
+    <wsdl:part name="parameters" element="tns:IsBarred" />
+  </wsdl:message>
+  <wsdl:message name="IsBarredSoapOut">
+    <wsdl:part name="parameters" element="tns:IsBarredResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSubscribeTo4GAddOnSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateSubscribeTo4GAddOn" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSubscribeTo4GAddOnSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateSubscribeTo4GAddOnResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeIn4GAddOnSoapIn">
+    <wsdl:part name="parameters" element="tns:SubscribeIn4GAddOn" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeIn4GAddOnSoapOut">
+    <wsdl:part name="parameters" element="tns:SubscribeIn4GAddOnResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnubscribeIn4GAddOnSoapIn">
+    <wsdl:part name="parameters" element="tns:UnubscribeIn4GAddOn" />
+  </wsdl:message>
+  <wsdl:message name="UnubscribeIn4GAddOnSoapOut">
+    <wsdl:part name="parameters" element="tns:UnubscribeIn4GAddOnResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckRedRocketBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckRedRocketBalance" />
+  </wsdl:message>
+  <wsdl:message name="CheckRedRocketBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckRedRocketBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckFixedUSSDContactNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckFixedUSSDContactNumber" />
+  </wsdl:message>
+  <wsdl:message name="CheckFixedUSSDContactNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckFixedUSSDContactNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUSSDContactNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeUSSDContactNumber" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUSSDContactNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeUSSDContactNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPostpaidBillInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPostpaidBillInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPostpaidBillInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPostpaidBillInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InquirePukCodeFixedLTESoapIn">
+    <wsdl:part name="parameters" element="tns:InquirePukCodeFixedLTE" />
+  </wsdl:message>
+  <wsdl:message name="InquirePukCodeFixedLTESoapOut">
+    <wsdl:part name="parameters" element="tns:InquirePukCodeFixedLTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddVoiceServiceFixedLTESoapIn">
+    <wsdl:part name="parameters" element="tns:AddVoiceServiceFixedLTE" />
+  </wsdl:message>
+  <wsdl:message name="AddVoiceServiceFixedLTESoapOut">
+    <wsdl:part name="parameters" element="tns:AddVoiceServiceFixedLTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveVoiceServiceFixedLTESoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveVoiceServiceFixedLTE" />
+  </wsdl:message>
+  <wsdl:message name="RemoveVoiceServiceFixedLTESoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveVoiceServiceFixedLTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFixedLTEDataBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFixedLTEDataBalance" />
+  </wsdl:message>
+  <wsdl:message name="GetFixedLTEDataBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFixedLTEDataBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFixedLTEAvailableBasePlansSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFixedLTEAvailableBasePlans" />
+  </wsdl:message>
+  <wsdl:message name="GetFixedLTEAvailableBasePlansSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFixedLTEAvailableBasePlansResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeFixedLTEBasePricePlanSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeFixedLTEBasePricePlan" />
+  </wsdl:message>
+  <wsdl:message name="ChangeFixedLTEBasePricePlanSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeFixedLTEBasePricePlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckShahryOfferPointsSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckShahryOfferPoints" />
+  </wsdl:message>
+  <wsdl:message name="CheckShahryOfferPointsSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckShahryOfferPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableProducts" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateProductSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateProduct" />
+  </wsdl:message>
+  <wsdl:message name="ValidateProductSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddProductSoapIn">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="AddProductSoapOut">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="TerminateProductSoapIn">
+    <wsdl:part name="parameters" element="tns:TerminateProduct" />
+  </wsdl:message>
+  <wsdl:message name="TerminateProductSoapOut">
+    <wsdl:part name="parameters" element="tns:TerminateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentActiveProductSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentActiveProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentActiveProductSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentActiveProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEEGlobalProdChargeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEEGlobalProdCharge" />
+  </wsdl:message>
+  <wsdl:message name="GetEEGlobalProdChargeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEEGlobalProdChargeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPUKDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPUKDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetPUKDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPUKDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPostpaidOffersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPostpaidOffers" />
+  </wsdl:message>
+  <wsdl:message name="GetPostpaidOffersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPostpaidOffersResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMobileOfferSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMobileOffer" />
+  </wsdl:message>
+  <wsdl:message name="AddMobileOfferSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMobileOfferResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAddDataProductSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateAddDataProduct" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAddDataProductSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateAddDataProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckAddOnBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckAddOnBalance" />
+  </wsdl:message>
+  <wsdl:message name="CheckAddOnBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckAddOnBalanceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PostpaidServiceSoap">
+    <wsdl:operation name="AddDataProduct">
+      <wsdl:input message="tns:AddDataProductSoapIn" />
+      <wsdl:output message="tns:AddDataProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDataBalanceSelfCare">
+      <wsdl:input message="tns:CheckDataBalanceSelfCareSoapIn" />
+      <wsdl:output message="tns:CheckDataBalanceSelfCareSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDataBalance">
+      <wsdl:input message="tns:CheckDataBalanceSoapIn" />
+      <wsdl:output message="tns:CheckDataBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableDataProducts">
+      <wsdl:input message="tns:GetAvailableDataProductsSoapIn" />
+      <wsdl:output message="tns:GetAvailableDataProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBlackBerryProducts">
+      <wsdl:input message="tns:GetAvailableBlackBerryProductsSoapIn" />
+      <wsdl:output message="tns:GetAvailableBlackBerryProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableDataTopUps">
+      <wsdl:input message="tns:GetAvailableDataTopUpsSoapIn" />
+      <wsdl:output message="tns:GetAvailableDataTopUpsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFamilyCUGMembers">
+      <wsdl:input message="tns:GetFamilyCUGMembersSoapIn" />
+      <wsdl:output message="tns:GetFamilyCUGMembersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InviteToFamilyCUG">
+      <wsdl:input message="tns:InviteToFamilyCUGSoapIn" />
+      <wsdl:output message="tns:InviteToFamilyCUGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RevokeFamilyCUGInvitation">
+      <wsdl:input message="tns:RevokeFamilyCUGInvitationSoapIn" />
+      <wsdl:output message="tns:RevokeFamilyCUGInvitationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RevokeAllFamilyCUGInvitations">
+      <wsdl:input message="tns:RevokeAllFamilyCUGInvitationsSoapIn" />
+      <wsdl:output message="tns:RevokeAllFamilyCUGInvitationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMemberFromFamilyCUG">
+      <wsdl:input message="tns:RemoveMemberFromFamilyCUGSoapIn" />
+      <wsdl:output message="tns:RemoveMemberFromFamilyCUGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingFamilyCUGInvitationsReceived">
+      <wsdl:input message="tns:GetPendingFamilyCUGInvitationsReceivedSoapIn" />
+      <wsdl:output message="tns:GetPendingFamilyCUGInvitationsReceivedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingFamilyCUGInvitationsSent">
+      <wsdl:input message="tns:GetPendingFamilyCUGInvitationsSentSoapIn" />
+      <wsdl:output message="tns:GetPendingFamilyCUGInvitationsSentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptFamilyCUGInvitation">
+      <wsdl:input message="tns:AcceptFamilyCUGInvitationSoapIn" />
+      <wsdl:output message="tns:AcceptFamilyCUGInvitationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectFamilyCUGInvitation">
+      <wsdl:input message="tns:RejectFamilyCUGInvitationSoapIn" />
+      <wsdl:output message="tns:RejectFamilyCUGInvitationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectAllFamilyCUGInvitations">
+      <wsdl:input message="tns:RejectAllFamilyCUGInvitationsSoapIn" />
+      <wsdl:output message="tns:RejectAllFamilyCUGInvitationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFamilyCUG">
+      <wsdl:input message="tns:DeleteFamilyCUGSoapIn" />
+      <wsdl:output message="tns:DeleteFamilyCUGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddDataTopUp">
+      <wsdl:input message="tns:ValidateAddDataTopUpSoapIn" />
+      <wsdl:output message="tns:ValidateAddDataTopUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDataTopUp">
+      <wsdl:input message="tns:AddDataTopUpSoapIn" />
+      <wsdl:output message="tns:AddDataTopUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TerminatePrepaidLine">
+      <wsdl:input message="tns:TerminatePrepaidLineSoapIn" />
+      <wsdl:output message="tns:TerminatePrepaidLineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOffPeakProduct">
+      <wsdl:input message="tns:AddOffPeakProductSoapIn" />
+      <wsdl:output message="tns:AddOffPeakProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TerminateOffPeakProduct">
+      <wsdl:input message="tns:TerminateOffPeakProductSoapIn" />
+      <wsdl:output message="tns:TerminateOffPeakProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOffPeakProductStatus">
+      <wsdl:input message="tns:GetOffPeakProductStatusSoapIn" />
+      <wsdl:output message="tns:GetOffPeakProductStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReserveVoucher">
+      <wsdl:input message="tns:ReserveVoucherSoapIn" />
+      <wsdl:output message="tns:ReserveVoucherSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EndReserve">
+      <wsdl:input message="tns:EndReserveSoapIn" />
+      <wsdl:output message="tns:EndReserveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMGMLoyaltyPoints">
+      <wsdl:input message="tns:GetMGMLoyaltyPointsSoapIn" />
+      <wsdl:output message="tns:GetMGMLoyaltyPointsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HasTrialProduct">
+      <wsdl:input message="tns:HasTrialProductSoapIn" />
+      <wsdl:output message="tns:HasTrialProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuyTrialProduct">
+      <wsdl:input message="tns:BuyTrialProductSoapIn" />
+      <wsdl:output message="tns:BuyTrialProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePrepaidPreferredLanguage">
+      <wsdl:input message="tns:ChangePrepaidPreferredLanguageSoapIn" />
+      <wsdl:output message="tns:ChangePrepaidPreferredLanguageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBasePlans">
+      <wsdl:input message="tns:GetAvailableBasePlansSoapIn" />
+      <wsdl:output message="tns:GetAvailableBasePlansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSubscriptionBasePlan">
+      <wsdl:input message="tns:ValidateSubscriptionBasePlanSoapIn" />
+      <wsdl:output message="tns:ValidateSubscriptionBasePlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSubscriptionDataProduct">
+      <wsdl:input message="tns:ValidateSubscriptionDataProductSoapIn" />
+      <wsdl:output message="tns:ValidateSubscriptionDataProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableDataPlans">
+      <wsdl:input message="tns:GetAvailableDataPlansSoapIn" />
+      <wsdl:output message="tns:GetAvailableDataPlansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBlackberryPlans">
+      <wsdl:input message="tns:GetAvailableBlackberryPlansSoapIn" />
+      <wsdl:output message="tns:GetAvailableBlackberryPlansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSubscriptionBundlePlan">
+      <wsdl:input message="tns:ChangeSubscriptionBundlePlanSoapIn" />
+      <wsdl:output message="tns:ChangeSubscriptionBundlePlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateApplicableTasks">
+      <wsdl:input message="tns:ValidateApplicableTasksSoapIn" />
+      <wsdl:output message="tns:ValidateApplicableTasksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableSmartRoamerBundles">
+      <wsdl:input message="tns:GetAvailableSmartRoamerBundlesSoapIn" />
+      <wsdl:output message="tns:GetAvailableSmartRoamerBundlesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSmartRoamerBundle">
+      <wsdl:input message="tns:AddSmartRoamerBundleSoapIn" />
+      <wsdl:output message="tns:AddSmartRoamerBundleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BarData">
+      <wsdl:input message="tns:BarDataSoapIn" />
+      <wsdl:output message="tns:BarDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnBarData">
+      <wsdl:input message="tns:UnBarDataSoapIn" />
+      <wsdl:output message="tns:UnBarDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsBarred">
+      <wsdl:input message="tns:IsBarredSoapIn" />
+      <wsdl:output message="tns:IsBarredSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSubscribeTo4GAddOn">
+      <wsdl:input message="tns:ValidateSubscribeTo4GAddOnSoapIn" />
+      <wsdl:output message="tns:ValidateSubscribeTo4GAddOnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeIn4GAddOn">
+      <wsdl:input message="tns:SubscribeIn4GAddOnSoapIn" />
+      <wsdl:output message="tns:SubscribeIn4GAddOnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnubscribeIn4GAddOn">
+      <wsdl:input message="tns:UnubscribeIn4GAddOnSoapIn" />
+      <wsdl:output message="tns:UnubscribeIn4GAddOnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckRedRocketBalance">
+      <wsdl:input message="tns:CheckRedRocketBalanceSoapIn" />
+      <wsdl:output message="tns:CheckRedRocketBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckFixedUSSDContactNumber">
+      <wsdl:input message="tns:CheckFixedUSSDContactNumberSoapIn" />
+      <wsdl:output message="tns:CheckFixedUSSDContactNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUSSDContactNumber">
+      <wsdl:input message="tns:ChangeUSSDContactNumberSoapIn" />
+      <wsdl:output message="tns:ChangeUSSDContactNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostpaidBillInfo">
+      <wsdl:input message="tns:GetPostpaidBillInfoSoapIn" />
+      <wsdl:output message="tns:GetPostpaidBillInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InquirePukCodeFixedLTE">
+      <wsdl:input message="tns:InquirePukCodeFixedLTESoapIn" />
+      <wsdl:output message="tns:InquirePukCodeFixedLTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddVoiceServiceFixedLTE">
+      <wsdl:input message="tns:AddVoiceServiceFixedLTESoapIn" />
+      <wsdl:output message="tns:AddVoiceServiceFixedLTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveVoiceServiceFixedLTE">
+      <wsdl:input message="tns:RemoveVoiceServiceFixedLTESoapIn" />
+      <wsdl:output message="tns:RemoveVoiceServiceFixedLTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedLTEDataBalance">
+      <wsdl:input message="tns:GetFixedLTEDataBalanceSoapIn" />
+      <wsdl:output message="tns:GetFixedLTEDataBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedLTEAvailableBasePlans">
+      <wsdl:input message="tns:GetFixedLTEAvailableBasePlansSoapIn" />
+      <wsdl:output message="tns:GetFixedLTEAvailableBasePlansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeFixedLTEBasePricePlan">
+      <wsdl:input message="tns:ChangeFixedLTEBasePricePlanSoapIn" />
+      <wsdl:output message="tns:ChangeFixedLTEBasePricePlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckShahryOfferPoints">
+      <wsdl:input message="tns:CheckShahryOfferPointsSoapIn" />
+      <wsdl:output message="tns:CheckShahryOfferPointsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableProducts">
+      <wsdl:input message="tns:GetAvailableProductsSoapIn" />
+      <wsdl:output message="tns:GetAvailableProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateProduct">
+      <wsdl:input message="tns:ValidateProductSoapIn" />
+      <wsdl:output message="tns:ValidateProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input message="tns:AddProductSoapIn" />
+      <wsdl:output message="tns:AddProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TerminateProduct">
+      <wsdl:input message="tns:TerminateProductSoapIn" />
+      <wsdl:output message="tns:TerminateProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentActiveProduct">
+      <wsdl:input message="tns:GetCurrentActiveProductSoapIn" />
+      <wsdl:output message="tns:GetCurrentActiveProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEEGlobalProdCharge">
+      <wsdl:input message="tns:GetEEGlobalProdChargeSoapIn" />
+      <wsdl:output message="tns:GetEEGlobalProdChargeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPUKDetails">
+      <wsdl:input message="tns:GetPUKDetailsSoapIn" />
+      <wsdl:output message="tns:GetPUKDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostpaidOffers">
+      <wsdl:input message="tns:GetPostpaidOffersSoapIn" />
+      <wsdl:output message="tns:GetPostpaidOffersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMobileOffer">
+      <wsdl:input message="tns:AddMobileOfferSoapIn" />
+      <wsdl:output message="tns:AddMobileOfferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddDataProduct">
+      <wsdl:input message="tns:ValidateAddDataProductSoapIn" />
+      <wsdl:output message="tns:ValidateAddDataProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAddOnBalance">
+      <wsdl:input message="tns:CheckAddOnBalanceSoapIn" />
+      <wsdl:output message="tns:CheckAddOnBalanceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PostpaidServiceSoap" type="tns:PostpaidServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddDataProduct">
+      <soap:operation soapAction="http://nawras.om/2011/2/AddDataProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDataBalanceSelfCare">
+      <soap:operation soapAction="http://nawras.om/2011/2/CheckDataBalanceSelfCare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDataBalance">
+      <soap:operation soapAction="http://nawras.om/2011/2/CheckDataBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableDataProducts">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetAvailableDataProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBlackBerryProducts">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetAvailableBlackBerryProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableDataTopUps">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetAvailableDataTopUps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFamilyCUGMembers">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetFamilyCUGMembers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InviteToFamilyCUG">
+      <soap:operation soapAction="http://nawras.om/2011/2/InviteToFamilyCUG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevokeFamilyCUGInvitation">
+      <soap:operation soapAction="http://nawras.om/2011/2/RevokeFamilyCUGInvitation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevokeAllFamilyCUGInvitations">
+      <soap:operation soapAction="http://nawras.om/2011/2/RevokeAllFamilyCUGInvitations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMemberFromFamilyCUG">
+      <soap:operation soapAction="http://nawras.om/2011/2/RemoveMemberFromFamilyCUG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingFamilyCUGInvitationsReceived">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetPendingFamilyCUGInvitationsReceived" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingFamilyCUGInvitationsSent">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetPendingFamilyCUGInvitationsSent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptFamilyCUGInvitation">
+      <soap:operation soapAction="http://nawras.om/2011/2/AcceptFamilyCUGInvitation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectFamilyCUGInvitation">
+      <soap:operation soapAction="http://nawras.om/2011/2/RejectFamilyCUGInvitation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectAllFamilyCUGInvitations">
+      <soap:operation soapAction="http://nawras.om/2011/2/RejectAllFamilyCUGInvitations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFamilyCUG">
+      <soap:operation soapAction="http://nawras.om/2011/2/DeleteFamilyCUG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddDataTopUp">
+      <soap:operation soapAction="http://nawras.om/2011/2/ValidateAddDataTopUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDataTopUp">
+      <soap:operation soapAction="http://nawras.om/2011/2/AddDataTopUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminatePrepaidLine">
+      <soap:operation soapAction="http://nawras.om/2011/2/TerminatePrepaidLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOffPeakProduct">
+      <soap:operation soapAction="http://nawras.om/2011/2/AddOffPeakProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminateOffPeakProduct">
+      <soap:operation soapAction="http://nawras.om/2011/2/TerminateOffPeakProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOffPeakProductStatus">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetOffPeakProductStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReserveVoucher">
+      <soap:operation soapAction="http://nawras.om/2011/2/ReserveVoucher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndReserve">
+      <soap:operation soapAction="http://nawras.om/2011/2/EndReserve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMGMLoyaltyPoints">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetMGMLoyaltyPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasTrialProduct">
+      <soap:operation soapAction="http://nawras.om/2011/2/HasTrialProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyTrialProduct">
+      <soap:operation soapAction="http://nawras.om/2011/2/BuyTrialProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePrepaidPreferredLanguage">
+      <soap:operation soapAction="http://nawras.om/2011/2/ChangePrepaidPreferredLanguage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBasePlans">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetAvailableBasePlans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSubscriptionBasePlan">
+      <soap:operation soapAction="http://nawras.om/2011/2/ValidateSubscriptionBasePlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSubscriptionDataProduct">
+      <soap:operation soapAction="http://nawras.om/2011/2/ValidateSubscriptionDataProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableDataPlans">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetAvailableDataPlans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBlackberryPlans">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetAvailableBlackberryPlans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSubscriptionBundlePlan">
+      <soap:operation soapAction="http://nawras.om/2011/2/ChangeSubscriptionBundlePlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateApplicableTasks">
+      <soap:operation soapAction="http://nawras.om/2011/2/ValidateApplicableTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableSmartRoamerBundles">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetAvailableSmartRoamerBundles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSmartRoamerBundle">
+      <soap:operation soapAction="http://nawras.om/2011/2/AddSmartRoamerBundle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BarData">
+      <soap:operation soapAction="http://nawras.om/2011/2/BarData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnBarData">
+      <soap:operation soapAction="http://nawras.om/2011/2/UnBarData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBarred">
+      <soap:operation soapAction="http://nawras.om/2011/2/IsBarred" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSubscribeTo4GAddOn">
+      <soap:operation soapAction="http://nawras.om/2011/2/ValidateSubscribeTo4GAddOn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeIn4GAddOn">
+      <soap:operation soapAction="http://nawras.om/2011/2/SubscribeIn4GAddOn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnubscribeIn4GAddOn">
+      <soap:operation soapAction="http://nawras.om/2011/2/UnubscribeIn4GAddOn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckRedRocketBalance">
+      <soap:operation soapAction="http://nawras.om/2011/2/CheckRedRocketBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFixedUSSDContactNumber">
+      <soap:operation soapAction="http://nawras.om/2011/2/CheckFixedUSSDContactNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUSSDContactNumber">
+      <soap:operation soapAction="http://nawras.om/2011/2/ChangeUSSDContactNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostpaidBillInfo">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetPostpaidBillInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquirePukCodeFixedLTE">
+      <soap:operation soapAction="http://nawras.om/2011/2/InquirePukCodeFixedLTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVoiceServiceFixedLTE">
+      <soap:operation soapAction="http://nawras.om/2011/2/AddVoiceServiceFixedLTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveVoiceServiceFixedLTE">
+      <soap:operation soapAction="http://nawras.om/2011/2/RemoveVoiceServiceFixedLTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedLTEDataBalance">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetFixedLTEDataBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedLTEAvailableBasePlans">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetFixedLTEAvailableBasePlans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeFixedLTEBasePricePlan">
+      <soap:operation soapAction="http://nawras.om/2011/2/ChangeFixedLTEBasePricePlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckShahryOfferPoints">
+      <soap:operation soapAction="http://nawras.om/2011/2/CheckShahryOfferPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableProducts">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetAvailableProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateProduct">
+      <soap:operation soapAction="http://nawras.om/2011/2/ValidateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://nawras.om/2011/2/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminateProduct">
+      <soap:operation soapAction="http://nawras.om/2011/2/TerminateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentActiveProduct">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetCurrentActiveProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEEGlobalProdCharge">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetEEGlobalProdCharge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPUKDetails">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetPUKDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostpaidOffers">
+      <soap:operation soapAction="http://nawras.om/2011/2/GetPostpaidOffers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMobileOffer">
+      <soap:operation soapAction="http://nawras.om/2011/2/AddMobileOffer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddDataProduct">
+      <soap:operation soapAction="http://nawras.om/2011/2/ValidateAddDataProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAddOnBalance">
+      <soap:operation soapAction="http://nawras.om/2011/2/CheckAddOnBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PostpaidServiceSoap12" type="tns:PostpaidServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddDataProduct">
+      <soap12:operation soapAction="http://nawras.om/2011/2/AddDataProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDataBalanceSelfCare">
+      <soap12:operation soapAction="http://nawras.om/2011/2/CheckDataBalanceSelfCare" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDataBalance">
+      <soap12:operation soapAction="http://nawras.om/2011/2/CheckDataBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableDataProducts">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetAvailableDataProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBlackBerryProducts">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetAvailableBlackBerryProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableDataTopUps">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetAvailableDataTopUps" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFamilyCUGMembers">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetFamilyCUGMembers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InviteToFamilyCUG">
+      <soap12:operation soapAction="http://nawras.om/2011/2/InviteToFamilyCUG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevokeFamilyCUGInvitation">
+      <soap12:operation soapAction="http://nawras.om/2011/2/RevokeFamilyCUGInvitation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevokeAllFamilyCUGInvitations">
+      <soap12:operation soapAction="http://nawras.om/2011/2/RevokeAllFamilyCUGInvitations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMemberFromFamilyCUG">
+      <soap12:operation soapAction="http://nawras.om/2011/2/RemoveMemberFromFamilyCUG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingFamilyCUGInvitationsReceived">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetPendingFamilyCUGInvitationsReceived" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingFamilyCUGInvitationsSent">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetPendingFamilyCUGInvitationsSent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptFamilyCUGInvitation">
+      <soap12:operation soapAction="http://nawras.om/2011/2/AcceptFamilyCUGInvitation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectFamilyCUGInvitation">
+      <soap12:operation soapAction="http://nawras.om/2011/2/RejectFamilyCUGInvitation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectAllFamilyCUGInvitations">
+      <soap12:operation soapAction="http://nawras.om/2011/2/RejectAllFamilyCUGInvitations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFamilyCUG">
+      <soap12:operation soapAction="http://nawras.om/2011/2/DeleteFamilyCUG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddDataTopUp">
+      <soap12:operation soapAction="http://nawras.om/2011/2/ValidateAddDataTopUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDataTopUp">
+      <soap12:operation soapAction="http://nawras.om/2011/2/AddDataTopUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminatePrepaidLine">
+      <soap12:operation soapAction="http://nawras.om/2011/2/TerminatePrepaidLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOffPeakProduct">
+      <soap12:operation soapAction="http://nawras.om/2011/2/AddOffPeakProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminateOffPeakProduct">
+      <soap12:operation soapAction="http://nawras.om/2011/2/TerminateOffPeakProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOffPeakProductStatus">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetOffPeakProductStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReserveVoucher">
+      <soap12:operation soapAction="http://nawras.om/2011/2/ReserveVoucher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndReserve">
+      <soap12:operation soapAction="http://nawras.om/2011/2/EndReserve" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMGMLoyaltyPoints">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetMGMLoyaltyPoints" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasTrialProduct">
+      <soap12:operation soapAction="http://nawras.om/2011/2/HasTrialProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyTrialProduct">
+      <soap12:operation soapAction="http://nawras.om/2011/2/BuyTrialProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePrepaidPreferredLanguage">
+      <soap12:operation soapAction="http://nawras.om/2011/2/ChangePrepaidPreferredLanguage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBasePlans">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetAvailableBasePlans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSubscriptionBasePlan">
+      <soap12:operation soapAction="http://nawras.om/2011/2/ValidateSubscriptionBasePlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSubscriptionDataProduct">
+      <soap12:operation soapAction="http://nawras.om/2011/2/ValidateSubscriptionDataProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableDataPlans">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetAvailableDataPlans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBlackberryPlans">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetAvailableBlackberryPlans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSubscriptionBundlePlan">
+      <soap12:operation soapAction="http://nawras.om/2011/2/ChangeSubscriptionBundlePlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateApplicableTasks">
+      <soap12:operation soapAction="http://nawras.om/2011/2/ValidateApplicableTasks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableSmartRoamerBundles">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetAvailableSmartRoamerBundles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSmartRoamerBundle">
+      <soap12:operation soapAction="http://nawras.om/2011/2/AddSmartRoamerBundle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BarData">
+      <soap12:operation soapAction="http://nawras.om/2011/2/BarData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnBarData">
+      <soap12:operation soapAction="http://nawras.om/2011/2/UnBarData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBarred">
+      <soap12:operation soapAction="http://nawras.om/2011/2/IsBarred" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSubscribeTo4GAddOn">
+      <soap12:operation soapAction="http://nawras.om/2011/2/ValidateSubscribeTo4GAddOn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeIn4GAddOn">
+      <soap12:operation soapAction="http://nawras.om/2011/2/SubscribeIn4GAddOn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnubscribeIn4GAddOn">
+      <soap12:operation soapAction="http://nawras.om/2011/2/UnubscribeIn4GAddOn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckRedRocketBalance">
+      <soap12:operation soapAction="http://nawras.om/2011/2/CheckRedRocketBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFixedUSSDContactNumber">
+      <soap12:operation soapAction="http://nawras.om/2011/2/CheckFixedUSSDContactNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUSSDContactNumber">
+      <soap12:operation soapAction="http://nawras.om/2011/2/ChangeUSSDContactNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostpaidBillInfo">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetPostpaidBillInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquirePukCodeFixedLTE">
+      <soap12:operation soapAction="http://nawras.om/2011/2/InquirePukCodeFixedLTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVoiceServiceFixedLTE">
+      <soap12:operation soapAction="http://nawras.om/2011/2/AddVoiceServiceFixedLTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveVoiceServiceFixedLTE">
+      <soap12:operation soapAction="http://nawras.om/2011/2/RemoveVoiceServiceFixedLTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedLTEDataBalance">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetFixedLTEDataBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedLTEAvailableBasePlans">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetFixedLTEAvailableBasePlans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeFixedLTEBasePricePlan">
+      <soap12:operation soapAction="http://nawras.om/2011/2/ChangeFixedLTEBasePricePlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckShahryOfferPoints">
+      <soap12:operation soapAction="http://nawras.om/2011/2/CheckShahryOfferPoints" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableProducts">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetAvailableProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateProduct">
+      <soap12:operation soapAction="http://nawras.om/2011/2/ValidateProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap12:operation soapAction="http://nawras.om/2011/2/AddProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminateProduct">
+      <soap12:operation soapAction="http://nawras.om/2011/2/TerminateProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentActiveProduct">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetCurrentActiveProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEEGlobalProdCharge">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetEEGlobalProdCharge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPUKDetails">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetPUKDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostpaidOffers">
+      <soap12:operation soapAction="http://nawras.om/2011/2/GetPostpaidOffers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMobileOffer">
+      <soap12:operation soapAction="http://nawras.om/2011/2/AddMobileOffer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddDataProduct">
+      <soap12:operation soapAction="http://nawras.om/2011/2/ValidateAddDataProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAddOnBalance">
+      <soap12:operation soapAction="http://nawras.om/2011/2/CheckAddOnBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PostpaidService">
+    <wsdl:port name="PostpaidServiceSoap" binding="tns:PostpaidServiceSoap">
+      <soap:address location="http://10.4.104.83/USSDService_smsbalcheck/PostpaidService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PostpaidServiceSoap12" binding="tns:PostpaidServiceSoap12">
+      <soap12:address location="http://10.4.104.83/USSDService_smsbalcheck/PostpaidService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

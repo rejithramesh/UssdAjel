@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="UssdLib">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/UssdLib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,32 @@
+<component name="libraryTable">
+  <library name="apache-commons-lang">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/apache-commons-lang.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/cxf-api.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/cxf-bundle-jaxrs-2.3.9.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-2.2.8.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-2.4.1.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-2.5.3.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-2.5.4.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-2.7.0.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-jetty.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-osgi-2.3.6.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/hibernate3.5.4.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/javax.persistence-2.0.3.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/log4j-1.2.17.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/scala-compiler.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/scalap.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/scalatest-1.2.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/UssdDatabase.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/UssdLib.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/UssdUtils.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/cxf-rt-transports-http-2.6.6-sources.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/UssdDatabase.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/System_Setup/System_setup/Jars/UssdUtils.jar!/" />
+    </SOURCES>
+  </library>
+</component>
