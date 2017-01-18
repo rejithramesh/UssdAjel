@@ -16,7 +16,7 @@
         <url-pattern>/ReceiveUssd</url-pattern>
     </servlet-mapping>
 
-    <servlet>
+<!--    <servlet>
         <display-name>Test</display-name>
         <servlet-name>Test</servlet-name>
         <servlet-class>Test</servlet-class>
@@ -24,6 +24,6 @@
     <servlet-mapping>
         <servlet-name>Test</servlet-name>
         <url-pattern>/Test</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
 
 </web-app>

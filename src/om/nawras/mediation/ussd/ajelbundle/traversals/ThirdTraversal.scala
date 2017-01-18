@@ -15,7 +15,7 @@ object ThirdTraversal {
     val log = LOG_EXECUTE
 
     if (log.isDebugEnabled) {
-      log.debug("Entering...")
+      log.debug("Third Traversal -- Entering..."+request.getInput.split(":").reverse.head)
       log.debug(new StringBuilder("inputs request[").append(request).append("]"))
     }
 

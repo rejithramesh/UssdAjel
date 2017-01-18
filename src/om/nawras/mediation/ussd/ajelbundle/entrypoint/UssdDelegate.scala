@@ -11,12 +11,14 @@ object UssdDelegate {
   val CLASS_NAME  = this.getClass.getName
   val LOG_EXECUTE = LogFactory.getLog(CLASS_NAME + ".execute()")
 
+
+
   def execute(request: UssdMORequest): UssdMOResponse = {
 
     val log = LOG_EXECUTE
 
     if (log.isDebugEnabled) {
-      log.debug("Entering...")
+      log.debug("Entering.....")
       log.debug(new StringBuilder("inputs request[").append(request).append("]"))
     }
 
@@ -26,7 +28,11 @@ object UssdDelegate {
     if (log.isDebugEnabled) {
       log.debug("first element in correlator: " + correlator.head)
       log.debug("last element in correlator: " + correlator.last)
-      log.debug("input is: " + request.getInput)
+
+      var lis =request.getContextParameters
+      var atb = lis.get(0)
+      log.debug("input is: "+atb.getValue)
+      log.debug("CORRELATOR HEAD MATCHING ::: "+correlator.head.compareToIgnoreCase(CorrelatorConstants.THIRD_TRAVERSAL))
     }
 
     val response = correlator.head match {

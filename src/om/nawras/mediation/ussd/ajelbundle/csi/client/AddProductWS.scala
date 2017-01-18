@@ -18,7 +18,7 @@ object AddProductWS {
     if (log.isDebugEnabled) {
       log.debug("Entering...")
       log.debug("inputs eventSource[" + eventSource + "]")
-      log.debug("inputs productIdentifier[" + productIdentifier + "]")
+      log.debug(" " + productIdentifier + "]")
       log.debug("inputs locale[" + locale + "]")
     }
 
