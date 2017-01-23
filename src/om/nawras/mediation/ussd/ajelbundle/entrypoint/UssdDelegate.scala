@@ -30,9 +30,18 @@ object UssdDelegate {
       log.debug("last element in correlator: " + correlator.last)
 
       var lis =request.getContextParameters
-      var atb = lis.get(0)
-      log.debug("input is: "+atb.getValue)
-      log.debug("CORRELATOR HEAD MATCHING ::: "+correlator.head.compareToIgnoreCase(CorrelatorConstants.THIRD_TRAVERSAL))
+      try
+      {
+        var atb = lis.get(0)
+        log.debug("input is: "+atb.getValue)
+        log.debug("CORRELATOR HEAD MATCHING ::: "+correlator.head.compareToIgnoreCase(CorrelatorConstants.THIRD_TRAVERSAL))
+      }
+      catch
+        {
+
+          case _: Throwable => log.debug("Exception Occured *********************** ")
+        }
+
     }
 
     val response = correlator.head match {

@@ -19,7 +19,7 @@ object ConfirmationScreen {
     val log = MainMenu.LOG_EXECUTE
 
     if (log.isDebugEnabled) {
-      log.debug("Entering...")
+      log.debug("Entering Confirmation Screen...")
       log.debug(new StringBuilder("inputs request[").append(request).append("]"))
     }
 
@@ -28,10 +28,23 @@ object ConfirmationScreen {
     val response      = new UssdMOResponse
     val notification  = new Notification
     val message       = new MessageContent
+    var baseProduct = "trial"
+    var dataProduct = "trial"
+    try
+      {
+    baseProduct   = request.getInput.split(":").head
+    dataProduct   = if (request.getInput.split(":").apply(4) == "None") ""  else request.getInput.split(":").apply(4)
+      }
+    catch
+      {
 
-    val baseProduct   = request.getInput.split(":").head
-    val dataProduct   = if (request.getInput.split(":").apply(4) == "None") ""  else request.getInput.split(":").apply(4)
+        case _: Throwable => {
+                          log.debug("***********************Yet if Exception Occured *********************** ")
+                          baseProduct   = "VDP"
+                          dataProduct   = "Stream On"
+        }
 
+      }
     if (log.isDebugEnabled) {
       log.debug("baseProductId["+baseProduct+"]")
       log.debug("dataProductId["+dataProduct+"]")
@@ -58,7 +71,7 @@ object ConfirmationScreen {
 
     if (log.isDebugEnabled) {
       log.debug(new StringBuilder("outputs response[").append(response).append("]"))
-      log.debug("Exiting...")
+      log.debug("Exiting confirmation...")
     }
 
     response

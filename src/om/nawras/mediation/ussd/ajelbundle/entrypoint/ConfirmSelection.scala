@@ -20,7 +20,7 @@ object ConfirmSelection {
     val log = LOG_EXECUTE
 
     if (log.isDebugEnabled) {
-      log.debug("Entering...")
+      log.debug("Entering Coonfirm selection...")
       log.debug(new StringBuilder("inputs request[").append(request).append("]"))
     }
 

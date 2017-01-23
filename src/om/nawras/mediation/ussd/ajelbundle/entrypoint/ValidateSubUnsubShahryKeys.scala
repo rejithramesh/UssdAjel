@@ -97,11 +97,13 @@ object ValidateSubUnsubShahryKeys {
     if (log.isDebugEnabled) {
       log.debug("productId: " + productId)
       log.debug("productName: " + productName)
+      log.debug("Input: " + request.getInput)
     }
 
     val response: UssdMOResponse = request.getInput match {
       case MenuConstants.SUBSCRIBE_SHAHRY_KEYS   => doValidate(eventSource, MenuConstants.SUBSCRIBE_SHAHRY_KEYS, productId, productName, locale, request.getCorrelator)
       case MenuConstants.UNSUBSCRIBE_SHAHRY_KEYS => doValidate(eventSource, MenuConstants.UNSUBSCRIBE_SHAHRY_KEYS, productId, productName, locale, request.getCorrelator)
+      case "4" =>  doValidate(eventSource, MenuConstants.SUBSCRIBE_SHAHRY_KEYS, productId, productName, locale, request.getCorrelator)
       case _ => MainMenu.execute(request)
     }
 

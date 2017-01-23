@@ -16,7 +16,7 @@ object ValidateProductWS {
     val log = LOG_EXECUTE
 
     if (log.isDebugEnabled) {
-      log.debug("Entering...")
+      log.debug("Entering Validate...")
       log.debug("inputs eventSource["+eventSource+"]")
       log.debug("inputs baseProductIdentifier["+productIdentifier+"]")
       log.debug("inputs locale["+locale+"]")
