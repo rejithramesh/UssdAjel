@@ -19,12 +19,21 @@ object ValidateSubUnsubShahryKeys {
 
   private def doValidate(eventSource: String, choice: String, productIdentifier: String, productName: String, locale: Locale, requestCorrelator: String): UssdMOResponse = {
 
+    val log = LOG_EXECUTE
+
+    if (log.isDebugEnabled) {
+      log.debug("TRYING TO VALIDATE *********************** ...")
+    }
+
+
     val validateResult = choice match {
       case MenuConstants.SUBSCRIBE_SHAHRY_KEYS    =>
         ValidateProductWS.execute(eventSource, productIdentifier, "Add", locale)
       case MenuConstants.UNSUBSCRIBE_SHAHRY_KEYS  =>
         ValidateProductWS.execute(eventSource, productIdentifier, "Terminate", locale)
     }
+
+    log.debug("TRYING TO VALIDATE *********************** ..."+validateResult._1)
 
     val response: UssdMOResponse = validateResult._1.toInt match {
       case 0 =>
@@ -34,7 +43,10 @@ object ValidateSubUnsubShahryKeys {
         val title = new Title
         val asDao = new ApplicationStringsDAO
 
-        title.setValue(validateResult._2)
+        if(validateResult._2.compareToIgnoreCase("success")==0)
+          title.setValue("Are you sure you want to purchase this plan ?")
+        else
+          title.setValue(validateResult._2)
 
         val menuItem = new MenuItem
         menuItem.setDisplay(asDao.getAppText(ApplicationConstants.APPLICATION_NAME, YES, locale))
@@ -83,7 +95,7 @@ object ValidateSubUnsubShahryKeys {
     val log = LOG_EXECUTE
 
     if (log.isDebugEnabled) {
-      log.debug("Entering...")
+      log.debug("Entering validate produyct ...")
       log.debug(new StringBuilder("inputs request[").append(request).append("]"))
     }
 

@@ -16,7 +16,7 @@ object AddProductWS {
     val log = LOG_EXECUTE
 
     if (log.isDebugEnabled) {
-      log.debug("Entering...")
+      log.debug("Entering Add Product ...")
       log.debug("inputs eventSource[" + eventSource + "]")
       log.debug(" " + productIdentifier + "]")
       log.debug("inputs locale[" + locale + "]")

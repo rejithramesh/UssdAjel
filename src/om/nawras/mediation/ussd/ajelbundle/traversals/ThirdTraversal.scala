@@ -15,7 +15,7 @@ object ThirdTraversal {
     val log = LOG_EXECUTE
 
     if (log.isDebugEnabled) {
-      log.debug("Third Traversal -- Entering..."+request.getInput.split(":").reverse.head)
+      log.debug("Third Traversal -->  Entering..."+request.getInput.split(":").reverse.head)
       log.debug(new StringBuilder("inputs request[").append(request).append("]"))
     }
 
@@ -31,7 +31,7 @@ object ThirdTraversal {
 
       case "4" => {
                     val  req =request
-                    req.setInput("VDP:Stream On'")
+                    req.setInput("VDP:Stream On")
                     req.setCorrelator("FIRST_TRAVERSAL:;SECOND_TRAVERSAL:SELECT_ADDON_KEY;")
                     SubscribeUnsubscribeShahryKeys.execute(req)
                     }
