@@ -43,8 +43,8 @@ object ValidateSubUnsubShahryKeys {
         val title = new Title
         val asDao = new ApplicationStringsDAO
 
-        if(validateResult._2.compareToIgnoreCase("success")==0)
-          title.setValue("Are you sure you want to purchase this plan ?")
+        if(validateResult._2.compareToIgnoreCase("success")==0 && productIdentifier.compareToIgnoreCase("VDP")==0)
+          title.setValue(asDao.getAppText(ApplicationConstants.APPLICATION_NAME, "VdpConfirm", locale))
         else
           title.setValue(validateResult._2)
 
